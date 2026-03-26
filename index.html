@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#e5e2e1",
+              "on-tertiary": "#2f3131",
+              "surface-container": "#201f1f",
+              "outline-variant": "#444748",
+              "secondary-container": "#474746",
+              "primary-fixed-dim": "#e9c349",
+              "on-secondary-container": "#b7b5b4",
+              "surface-variant": "#353534",
+              "surface-tint": "#e9c349",
+              "tertiary-fixed-dim": "#c6c6c7",
+              "error-container": "#93000a",
+              "tertiary-fixed": "#e2e2e2",
+              "on-secondary-fixed-variant": "#474746",
+              "tertiary": "#c6c6c7",
+              "surface-container-high": "#2a2a2a",
+              "tertiary-container": "#080a0a",
+              "secondary-fixed": "#e5e2e1",
+              "background": "#131313",
+              "surface-container-low": "#1c1b1b",
+              "primary": "#e9c349",
+              "on-tertiary-fixed-variant": "#454747",
+              "surface": "#131313",
+              "on-primary-fixed-variant": "#574500",
+              "on-error": "#690005",
+              "secondary": "#c8c6c5",
+              "surface-dim": "#131313",
+              "surface-container-lowest": "#0e0e0e",
+              "on-primary-container": "#947600",
+              "surface-container-highest": "#353534",
+              "on-tertiary-fixed": "#1a1c1c",
+              "surface-bright": "#3a3939",
+              "on-primary": "#3c2f00",
+              "on-error-container": "#ffdad6",
+              "outline": "#8e9192",
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-surface-variant": "#c4c7c7",
+              "on-tertiary-container": "#78797a",
+              "on-primary-fixed": "#241a00",
+              "on-secondary-fixed": "#1c1b1b",
+              "on-surface": "#e5e2e1",
+              "error": "#ffb4ab",
+              "primary-fixed": "#ffe088",
+              "on-secondary": "#313030",
+              "inverse-primary": "#735c00",
+              "primary-container": "#0f0900",
+              "inverse-surface": "#e5e2e1",
+              "inverse-on-surface": "#313030"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(42, 42, 42, 0.4);
+        backdrop-filter: blur(20px);
+      }
+      .gradient-text {
+        background: linear-gradient(45deg, #e9c349, #ffe088);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-8 h-20 bg-[#131313]/80 backdrop-blur-xl z-50 transition-colors duration-300">
+<div class="text-xl font-bold tracking-[0.2em] text-[#E9C349] font-headline uppercase">VAULT</div>
+<div class="hidden md:flex items-center gap-12">
+<a class="font-headline tracking-tight text-[#E9C349] border-b-2 border-[#E9C349] pb-1 transition-colors duration-300" href="#">Wealth</a>
+<a class="font-headline tracking-tight text-[#E5E2E1]/60 hover:text-[#E5E2E1] transition-colors duration-300" href="#">Exchange</a>
+<a class="font-headline tracking-tight text-[#E5E2E1]/60 hover:text-[#E5E2E1] transition-colors duration-300" href="#">Cards</a>
+<a class="font-headline tracking-tight text-[#E5E2E1]/60 hover:text-[#E5E2E1] transition-colors duration-300" href="#">Security</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#E5E2E1]/60 hover:text-[#E9C349] transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-[#E5E2E1]/60 hover:text-[#E9C349] transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-10 h-10 overflow-hidden rounded-full border border-outline-variant/30">
+<img alt="Client Profile Avatar" class="w-full h-full object-cover" data-alt="portrait of a professional man in a tailored suit against a neutral architectural background, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTuCXCs06u3HpghyThRhUCNZS5Tna19vm869oZfFYhZHV49p8aMd34R9WwXVpvQ3El-5SOnmnGRXNlZBzIyWSfNqf9s2JoQR5wQi5mFC7216AkPO7ZsWOwapsjg3Dit1z-zroBPKAwQpWCN6ikBuaFNlNFRRkJeBtF1GAmoAN3RWRoWKu8fUUm62GtrM7-z505jfnJv2z-jRmLTKdALr29qUkfWI_6DOIJLuVQjvbf6a-XVK1tBXIxyFLRHXVtqTEt9o14gh-Jn9Y"/>
+</div>
+</div>
+</nav>
+<main class="relative overflow-hidden">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Modern Urban Life" class="w-full h-full object-cover opacity-40" data-alt="dramatic wide angle shot of high-rise skyscrapers in a modern metropolis during twilight, deep blues and golden city lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWRUy60_-A9OSUFMQVilA3vKXI-LfIngmbyRJDQiAKo-fUoVbX-qU6S-WkkRM9SAY6RCafMVWNpib0BwFDSdxNXfhV_K5uX5zFm3H6dJiu_ao3cVSbydscvH1cSgvGMkUTM50OOC2YaHrsCki4ea01tDul-LS6wUK_hWI0kZdGRWRsVF4NOBSdw_p2x_lVMHwSwYKskKS9GSFxvQwdKP4ix4Js3j1Q5egfAxisyDyu3LwnCxAiaTeudIDQYqQmSnRNOvmuvU9GUNA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+</div>
+<div class="container mx-auto px-8 lg:px-24 relative z-10">
+<div class="max-w-4xl space-y-10">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight leading-tight text-on-surface">
+                        Explore o mundo sem <br/>
+<span class="gradient-text">fronteiras financeiras.</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant/80 font-light max-w-2xl leading-relaxed">
+                        Conta internacional em mais de 50 moedas com as menores taxas do mercado.
+                    </p>
+<div class="pt-8">
+<button class="bg-gradient-to-r from-primary to-[#ffe088] text-on-primary px-10 py-5 rounded-sm font-bold tracking-widest uppercase text-sm hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-xl shadow-primary/10">
+                            Abra sua conta agora
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Section - Bento Grid Layout -->
+<section class="py-32 relative bg-surface-container-low">
+<div class="container mx-auto px-8 lg:px-24">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="space-y-4">
+<h2 class="label-md font-label text-primary uppercase tracking-[0.3em]">Exclusive Benefits</h2>
+<h3 class="text-4xl font-headline font-bold text-on-surface">O padrão ouro em serviços globais.</h3>
+</div>
+<div class="text-on-surface-variant max-w-md text-right hidden md:block">
+                        Liberdade financeira real, desenhada para quem não conhece limites geográficos.
+                    </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Conversion Card -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container-high p-12 transition-all duration-500 hover:bg-surface-container-highest">
+<div class="flex flex-col h-full justify-between relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="currency_exchange">currency_exchange</span>
+<div class="mt-20">
+<h4 class="text-2xl font-headline font-bold mb-4">Real-time conversion</h4>
+<p class="text-on-surface-variant leading-relaxed max-w-md">Converta seus ativos instantaneamente entre as 50 moedas mais fortes do mundo com a cotação comercial em tempo real.</p>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+<img alt="Financial Data" class="w-full h-full object-cover" data-alt="abstract close-up of financial stock market charts and digital numbers glowing in golden tones on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnG1fecR5B7nLfP-0uumNLqBk3BdMuSYqRnkp0AWrjpbAZyJnstvymjk6gX1kdlgjDrpS0RNv8Bp9M2GjtRdehw2kbRwBHwyvOsg_ghnpndN29zQuCQTInwOKfxYqHBUobfouMHBzgK11xPKfTFfCLYx_JensZFqiJBC1Wzij5Mv0ksaE2npvh0F_cETxjQIJAj7FUUowJlAYPznRNq6GHhZKTIv3ZizquTaGgKK44W2qhbHUUoQiveNGevuBiX6j5f_5j5rAxvik"/>
+</div>
+</div>
+<!-- Mastercard Card -->
+<div class="md:col-span-4 bg-primary p-12 flex flex-col justify-between text-on-primary">
+<span class="material-symbols-outlined text-4xl" data-icon="credit_card">credit_card</span>
+<div>
+<h4 class="text-2xl font-headline font-bold mb-4">Global Mastercard</h4>
+<p class="font-medium opacity-90 leading-relaxed">Cartão de débito premium aceito em milhões de estabelecimentos e saques em moeda local.</p>
+</div>
+</div>
+<!-- Savings Card -->
+<div class="md:col-span-5 bg-surface-container-high p-12 flex flex-col justify-between transition-all duration-500 hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+<div>
+<h4 class="text-2xl font-headline font-bold mb-4">Multi-currency savings</h4>
+<p class="text-on-surface-variant leading-relaxed">Proteja seu patrimônio investindo em moedas fortes com rendimento diário superior à média do mercado internacional.</p>
+</div>
+</div>
+<!-- Maintenance Card -->
+<div class="md:col-span-7 relative overflow-hidden bg-surface-container-high p-12 group transition-all duration-500 hover:bg-surface-container-highest">
+<div class="flex flex-col h-full justify-between relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="verified">verified</span>
+<div class="mt-12">
+<h4 class="text-2xl font-headline font-bold mb-4">Zero maintenance fees</h4>
+<p class="text-on-surface-variant leading-relaxed max-w-sm">Transparência total. Sem taxas ocultas de manutenção ou anuidades abusivas para membros Private.</p>
+</div>
+</div>
+<div class="absolute inset-0 z-0 opacity-5 group-hover:scale-110 transition-transform duration-700">
+<img alt="Modern Architecture" class="w-full h-full object-cover" data-alt="minimalist architectural shot of clean geometric lines and glass reflecting a clear sky in monochrome tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw8p4cnhazHl42sH-ofnHJtINCotJ2EF-1kT4xBm23B0k8JMqNM5Gjv_U7mJLhb93leExpUIKr6fVJFHdBiXyhaMe1FAMMrr2xwii-hJxY2AAdbRgo2dsGPnU09AwGAMzuUzDQZcxSki40tk3sOyVLfwmHIGud8f59Tx7p4AeefREvu6L14mFvDKYDmEs-c_x8ykkd7Sj60GImR1G61TYixrwyRGTtR-sH4LNPLTBcGC4y-1I9Y5E4dFj_G2m6wN24VAIIns3r9GA"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="py-40 bg-surface relative">
+<div class="container mx-auto px-8 lg:px-24">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+<div class="space-y-12">
+<div class="space-y-4">
+<h2 class="label-md font-label text-primary uppercase tracking-[0.3em]">Security First</h2>
+<h3 class="text-5xl font-headline font-bold text-on-surface leading-tight">Sua segurança é nossa prioridade absoluta.</h3>
+</div>
+<div class="space-y-10">
+<div class="flex gap-8">
+<div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-surface-container-high border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary" data-icon="lock">lock</span>
+</div>
+<div>
+<h5 class="text-lg font-headline font-bold mb-2">Criptografia de Nível Militar</h5>
+<p class="text-on-surface-variant">Dados protegidos por protocolos de segurança avançados utilizados pelas maiores instituições globais.</p>
+</div>
+</div>
+<div class="flex gap-8">
+<div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-surface-container-high border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
+</div>
+<div>
+<h5 class="text-lg font-headline font-bold mb-2">Regulação Internacional</h5>
+<p class="text-on-surface-variant">Operamos sob rigorosa supervisão regulatória em todas as jurisdições onde estamos presentes.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/5 blur-3xl rounded-full"></div>
+<div class="relative glass-card border-outline-variant/5 p-8 md:p-16">
+<div class="space-y-8">
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined text-5xl" data-icon="security" data-weight="fill">security</span>
+<span class="text-xs font-label tracking-[0.4em] uppercase">Private Security Protocols</span>
+</div>
+<div class="space-y-4">
+<div class="h-1 bg-outline-variant/20 w-full overflow-hidden">
+<div class="h-full bg-primary w-3/4"></div>
+</div>
+<p class="text-sm font-label text-on-surface-variant">Vault Integrity Status: Secure</p>
+</div>
+<div class="grid grid-cols-2 gap-6 pt-4">
+<div class="bg-surface-container-lowest p-6">
+<span class="block text-3xl font-headline font-bold text-primary mb-1">256-bit</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Encryption</span>
+</div>
+<div class="bg-surface-container-lowest p-6">
+<span class="block text-3xl font-headline font-bold text-primary mb-1">2FA</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Biometric</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-40 bg-background overflow-hidden relative">
+<div class="absolute inset-0 opacity-20">
+<img alt="Global Network" class="w-full h-full object-cover grayscale" data-alt="silhouettes of business people in a glass-walled airport terminal with a sunset glow in the background, symbolizing global connectivity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKT3nfhM4a0kYYQDTZ0DnohF1WHueeZaLAj9Lv3W708mpJbTGxpGXn5GewFhgNzvx5sqRkpTiVTW1v8i_Pc5P1MVgxHVULOS1FcUfGiScR99inGN0glj2T0REV3vZDCEXpau2lhf8D_We4uwjrGN4QgyIyeQM5HaAugBTZCY8ncJew3lqoPB3ioYho9DhtPvoFz5jkGZ5j83h2la9gul6h2LlkL6I7O5ZihUWdhwa2RkBemUrxRxK8hJpM2TWohnYZ1k9NFDq0uZg"/>
+</div>
+<div class="container mx-auto px-8 lg:px-24 text-center relative z-10">
+<div class="max-w-3xl mx-auto space-y-12">
+<h2 class="text-5xl md:text-6xl font-headline font-black tracking-tight leading-tight">
+                        Pronto para o próximo <br/>
+<span class="gradient-text">nível de liberdade?</span>
+</h2>
+<p class="text-xl text-on-surface-variant/80">
+                        Junte-se à elite financeira global e gerencie seu patrimônio sem fronteiras.
+                    </p>
+<div class="flex flex-col md:flex-row justify-center items-center gap-8 pt-6">
+<button class="bg-primary text-on-primary px-12 py-6 rounded-sm font-bold tracking-widest uppercase text-sm hover:scale-[1.05] active:scale-95 transition-all duration-300">
+                            Abra sua conta agora
+                        </button>
+<button class="text-on-surface border-b border-on-surface/20 pb-2 px-4 hover:border-primary transition-colors duration-300">
+                            Falar com consultor
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="py-20 bg-surface-container-lowest border-t border-outline-variant/5">
+<div class="container mx-auto px-8 lg:px-24">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-8">
+<div class="space-y-8">
+<div class="text-2xl font-bold tracking-[0.2em] text-[#E9C349] font-headline">VAULT</div>
+<p class="text-sm text-on-surface-variant leading-relaxed max-w-xs">
+                            A plataforma definitiva para gestão de patrimônio internacional e estilo de vida global.
+                        </p>
+</div>
+<div class="space-y-6">
+<h6 class="text-xs font-label font-bold uppercase tracking-widest text-on-surface">Produtos</h6>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Conta Wealth</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Câmbio</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cartões</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Concierge</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h6 class="text-xs font-label font-bold uppercase tracking-widest text-on-surface">Legal</h6>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Privacidade</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Termos de Uso</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Regulatório</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Compliance</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h6 class="text-xs font-label font-bold uppercase tracking-widest text-on-surface">Contato</h6>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li>0800 VAULT PRIV</li>
+<li>contact@vault.intl</li>
+<li class="flex gap-4 pt-4">
+<span class="material-symbols-outlined text-lg" data-icon="language">language</span>
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-20 pt-10 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant/60">
+                        © 2024 VAULT INTERNATIONAL BANK. ALL RIGHTS RESERVED.
+                    </p>
+<p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant/60">
+                        Financial conduct authority (FCA) regulated.
+                    </p>
+</div>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar Mobile -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex lg:hidden justify-around items-center h-20 pb-safe px-4 bg-[#131313]/90 backdrop-blur-2xl border-t border-[#444748]/15">
+<div class="flex flex-col items-center justify-center text-[#E9C349] bg-[#2A2A2A] rounded-sm px-4 py-2 scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#E5E2E1]/40 px-4 py-2 scale-90 duration-150 active:bg-[#2A2A2A]">
+<span class="material-symbols-outlined" data-icon="sync_alt">sync_alt</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Transfer</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#E5E2E1]/40 px-4 py-2 scale-90 duration-150 active:bg-[#2A2A2A]">
+<span class="material-symbols-outlined" data-icon="credit_card">credit_card</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Cards</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#E5E2E1]/40 px-4 py-2 scale-90 duration-150 active:bg-[#2A2A2A]">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+</body></html>
